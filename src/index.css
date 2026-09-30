@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Required for darkMode: 'class' to work in v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+*{
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  @apply bg-transparent w-2;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-secondary-dark rounded-full;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  @apply bg-transparent;
+}
+
+.scrollbar-hidden:hover::-webkit-scrollbar-thumb {
+  @apply border-secondary;
+}
+
+
+@theme {
+  --color-primary: #f42c37;
+  --color-secondary: #d4d4d4;
+  --color-secondary-dark: #a1a1a1;
+  --color-brand-yellow: #fdc62e;
+  --color-brand-green: #2dcc6f;
+  --color-brand-blue: #1376f4;
+  --color-brand-white: #eeeeee;
+}
+  .dark {
+    @apply bg-neutral-700 text-white
+  }
+
+  .default {
+    @apply bg-secondary text-neutral-700
+  }
+
+  .ghost {
+    @apply hover:bg-neutral-100 text-neutral-700
+  }
+
+  .default-size {
+    @apply rounded p-2
+  }
+
+  .icon {
+    @apply rounded-full w-10 h-10 flex items-center justify-center p-2.5
+  }
